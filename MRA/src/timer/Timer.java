@@ -10,7 +10,8 @@ import application.MRAapplication;
  *
  */
 public class Timer {
-
+// i added this comment for testing purposes
+	//new update
 	public static void main(String[] args) {
 		MRAapplication vrApp = new MRAapplication();
 		//vrApp.checkPayment();
