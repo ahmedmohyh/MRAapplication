@@ -63,12 +63,16 @@ public class DBFacade implements IMovie {
 	@Override
 	public ArrayList<Movie> getUserMovies() {
 		// TODO Auto-generated method stub
-
+		
 		ArrayList<Movie> result = new ArrayList<Movie>();
-		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=253500&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
+		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
+				+ "&useUnicode=true&characterEncoding=UTF-8"
+				+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
 
 		// Declare the necessary SQL queries.
-		String sqlSelect = "SELECT * FROM movie";
+		String sqlSelect = "select m.id, m.OriginalPublishingDate, m.title, m.director, m.ActorList from movie m inner join rating r on m.id = r.FilmID\n"
+				+ "group by m.id\n"
+				+ "order by avg(r.rating) desc";
 
 		try (Connection connection = DriverManager.getConnection(url)) {
 
