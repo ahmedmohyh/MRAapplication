@@ -51,20 +51,12 @@
     <url-pattern>/index</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>guest_servlet</servlet-name>
-    <servlet-class>servlets.GuestGUI</servlet-class>
+    <servlet-name>MovieOverView_servlet</servlet-name>
+    <servlet-class>servlets.MovieOverViewGUI</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>guest_servlet</servlet-name>
-    <url-pattern>/guestgui</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>staffmember_servlet</servlet-name>
-    <servlet-class>servlets.StaffmemberGUI</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>staffmember_servlet</servlet-name>
-    <url-pattern>/staffmembergui</url-pattern>
+    <servlet-name>MovieOverView_servlet</servlet-name>
+    <url-pattern>/AllMovieOverView</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>error404_servlet</servlet-name>

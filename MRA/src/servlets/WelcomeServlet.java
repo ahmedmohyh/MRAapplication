@@ -23,7 +23,7 @@ public class WelcomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) {
-
+		
 		// Set pagetitle and navtype
 		request.setAttribute("pagetitle", "Welcome");
 		request.setAttribute("navtype", "general");

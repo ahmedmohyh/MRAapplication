@@ -29,8 +29,8 @@ public class Movie {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Timestamp getOriginalPublishingDate() {
-		return OriginalPublishingDate;
+	public String getOriginalPublishingDate() {
+		return OriginalPublishingDate.toString();
 	}
 	public void setOriginalPublishingDate(Timestamp originalPublishingDate) {
 		OriginalPublishingDate = originalPublishingDate;

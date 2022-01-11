@@ -8,6 +8,6 @@ package interfaces;
  */
 public interface ITimer {
 
-	public void checkPayment();
+	public void checkExistingAdmin();
 
 }
