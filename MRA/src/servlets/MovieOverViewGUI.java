@@ -47,7 +47,7 @@ public class MovieOverViewGUI extends HttpServlet {
 	}
 
 	/**
-	 * Contains handling of insertOffer call
+	 * Contains handling of MovieOverView call
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 

@@ -59,6 +59,14 @@
     <url-pattern>/AllMovieOverView</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>Dashboard_servlet</servlet-name>
+    <servlet-class>servlets.DashboardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dashboard_servlet</servlet-name>
+    <url-pattern>/MyDashboard</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>error404_servlet</servlet-name>
     <servlet-class>servlets.Error404Servlet</servlet-class>
   </servlet>

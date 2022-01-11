@@ -26,11 +26,18 @@
   	</script>
 </head>
 <body>
-<div id="wrapper">
-	<div id="logo">Movie Rating App<br>Software Engineering </div>
-	
-    <ul id="navigation">
-    	<li><a href="AllMovieOverView" title="Movies">View Movies</a></li>
-    </ul>
+	<div id="logo" style="height: 70px;">Movie Rating App<br>Software Engineering </div>
+	<br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="#">Dashboard</a>
+      <a class="nav-item nav-link " href="AllMovieOverView">Movie OverView <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Add Movie</a>
+      <a class="nav-item nav-link" href="#">Rate Movie</a>
+      <a class="nav-item nav-link " href="#">Registeration</a>
+    </div>
+  </div>
+</nav>
+<br>
     
-	<div id="content">

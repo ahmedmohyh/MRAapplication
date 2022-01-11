@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 
- * @author swe.uni-due.de
+ * @author Ahmed Mousa
  *
  *         This servlet only contains a small index webpage where the user is
  *         able to choose his role.
