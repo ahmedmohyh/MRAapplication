@@ -14,7 +14,7 @@ import dbadapter.Movie;
 /**
  * Contains GUI for staffmember
  * 
- * @author swe.uni-due.de
+ * @author Ahmed Mousa
  *
  */
 public class MovieOverViewGUI extends HttpServlet {

@@ -18,10 +18,11 @@
          <table id="tblMovies" class="x-table table table-sm table-hover table-bordered table-striped searchable mt-2">
             <thead>
                <tr>
-                  <th width="25%" style="text-align: center">Title</th>
-                  <th width="25%" style="text-align: center">Director</th>
-                  <th width="25%" style="text-align: center">Publishing Date</th>
-                  <th width="25%" style="text-align: center">Actors</th>
+                  <th width="20%" style="text-align: center">Title</th>
+                  <th width="20%" style="text-align: center">Director</th>
+                  <th width="20%" style="text-align: center">Publishing Date</th>
+                  <th width="20%" style="text-align: center">Actors</th>
+                  <th width="20%" style="text-align: center">Rate Movie</th>
                </tr>
             </thead>
             <tbody>
@@ -46,6 +47,11 @@
                      <span>
                      ${movieList.getAcotrs()}
                      </span>
+                  </td>
+                  <td style="text-align: center">
+                     <form action="/RateMovie?FilmID= ${movieList.getId()}" method="POST">
+                        <input type="submit" value="Rate" class="btn btn-block btn-primary"/>
+                     </form>
                   </td>
                </tr>
                </#list>
