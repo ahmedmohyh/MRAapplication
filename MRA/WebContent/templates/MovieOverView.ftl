@@ -3,7 +3,7 @@
 <b>Welcome to our All Movies Page</b><br><br>
 <b>This is just for testing purposes</b>
 
-<table id="tblMovies" class="x-table table table-sm table-hover table-bordered searchable mb-3">
+<table id="tblMovies" class="x-table table table-sm table-hover table-bordered table-striped searchable mt-2">
    <thead>
       <tr>
          <th width="25%">Title</th>
