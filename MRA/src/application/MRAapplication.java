@@ -6,17 +6,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import dbadapter.DBFacade;
-import interfaces.GCmds;
-import interfaces.SMCmds;
+import dbadapter.Movie;
+import interfaces.Usermds;
 
 /**
- * This class contains the VRApplication which acts as the interface between all
- * components.
+ * This class contains the MRA  which acts as the interface between all components.
  * 
- * @author swe.uni-due.de
+ * @author Ahmed Mousa
  *
  */
-public class MRAapplication implements GCmds, SMCmds {
+public class MRAapplication implements Usermds {
 
 	private static MRAapplication instance;
 
@@ -31,5 +30,11 @@ public class MRAapplication implements GCmds, SMCmds {
 		}
 
 		return instance;
+	}
+
+	@Override
+	public ArrayList<Movie> getUserMovies() {
+		return DBFacade.getInstance().getUserMovies();
+	 
 	}
 }

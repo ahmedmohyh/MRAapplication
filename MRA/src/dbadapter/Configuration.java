@@ -19,7 +19,7 @@ public class Configuration {
 	private static final String SERVER = "localhost";
 	private static final String TYPE = "mysql";
 	private static final int PORT = 3306;
-	private static final String DATABASE = "vr";
+	private static final String DATABASE = "mra";
 	private static final String USER = "root";
 	
 	/**
