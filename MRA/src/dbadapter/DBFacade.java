@@ -54,10 +54,6 @@ public class DBFacade implements IMovie {
 		instance = dbfacade;
 	}
 
-	@Override
-	public boolean complete() {
-        return this.complete;
-    }
 	/**
 	 * This function return a list of all movies sorted by the avg rating.
 	 * @param None
@@ -69,11 +65,11 @@ public class DBFacade implements IMovie {
 		// TODO Auto-generated method stub
 		
 		ArrayList<Movie> result = new ArrayList<Movie>();
-		//String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
-				//+ "&useUnicode=true&characterEncoding=UTF-8"
-				//+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
+		//String url = "jdbc:" + Configuration.getType() + "://" + Configuration.getServer() + ":" + Configuration.getPort() + "/" + Configuration.getDatabase() + "?user=" + Configuration.getUser();
+		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
+		+ "&useUnicode=true&characterEncoding=UTF-8"
+		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
 		
-		String url = "jdbc:mysql://localhost:3306/?user=root";
 
 		// Declare the necessary SQL queries.
 		String sqlSelect = "select m.id, m.OriginalPublishingDate, m.title, m.director, m.ActorList from movie m inner join rating r on m.id = r.filmID\n"
@@ -114,9 +110,11 @@ public class DBFacade implements IMovie {
 		ArrayList<Movie> result = new ArrayList<Movie>();
 
 		// Declare the necessary SQL queries.
-		String url = "jdbc:" + Configuration.getType() + "://" + Configuration.getServer() + ":" + Configuration.getPort() + "/" + Configuration.getDatabase() + "?user=" + Configuration.getUser();
-
-		try (Connection connection = DriverManager.getConnection(url,Configuration.getUser(),Configuration.getPassword())) {
+		//String url = "jdbc:" + Configuration.getType() + "://" + Configuration.getServer() + ":" + Configuration.getPort() + "/" + Configuration.getDatabase() + "?user=" + Configuration.getUser();
+		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
+		+ "&useUnicode=true&characterEncoding=UTF-8"
+		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
+		try (Connection connection = DriverManager.getConnection(url)) {
 
 			try (PreparedStatement ps = connection.prepareStatement("SELECT m.id, m.title from movie m group by m.id")) {
 
@@ -142,10 +140,12 @@ public class DBFacade implements IMovie {
 
 	@Override
 	public boolean insertRating(Rating rate) {
-		String url = "jdbc:" + Configuration.getType() + "://" + Configuration.getServer() + ":" + Configuration.getPort() + "/" + Configuration.getDatabase() + "?user=" + Configuration.getUser();
-
+		//String url = "jdbc:" + Configuration.getType() + "://" + Configuration.getServer() + ":" + Configuration.getPort() + "/" + Configuration.getDatabase() + "?user=" + Configuration.getUser();
+		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
+		+ "&useUnicode=true&characterEncoding=UTF-8"
+		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
 		// Declare the necessary SQL queries.
-		try (Connection connection = DriverManager.getConnection(url, Configuration.getUser(),Configuration.getPassword())) {
+		try (Connection connection = DriverManager.getConnection(url)) {
 			PreparedStatement preparedStatement = connection.prepareStatement("insert into Rating (rating, comment, filmID, username) values (?, ?, ?, ?)");
 	        preparedStatement.setInt(1, rate.get_rating());
 	        preparedStatement.setString(2, rate.get_comment());
