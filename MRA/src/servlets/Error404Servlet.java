@@ -16,13 +16,18 @@ import javax.servlet.http.HttpServletResponse;
 public class Error404Servlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	private String message;
+	
+	public Error404Servlet(String msg) {
+		this.message = msg;
+	}
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) {
 		request.setAttribute("pagetitle", "Webpage not found");
 		request.setAttribute("navtype", "general");
 		try {
-			request.setAttribute("errormessage", "Error 404: Webpage not found");
+			request.setAttribute("errormessage", message);
 			request.getRequestDispatcher("/templates/error.ftl").forward(
 					request, response);
 		} catch (ServletException | IOException e) {

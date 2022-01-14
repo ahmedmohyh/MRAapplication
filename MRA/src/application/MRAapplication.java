@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import dbadapter.DBFacade;
 import dbadapter.Movie;
+import dbadapter.Rating;
 import interfaces.Usermds;
 
 /**
@@ -33,4 +34,17 @@ public class MRAapplication implements Usermds {
 		return DBFacade.getInstance().getUserMovies();
 	 
 	}
+
+	@Override
+	public ArrayList<Movie> getUserMoviesForRating() {
+
+		return DBFacade.getInstance().getUserMoviesForRating();
+	}
+
+	@Override
+	public boolean insertRating(Rating rate) {
+		
+			return DBFacade.getInstance().insertRating(rate);
+	}
+
 }

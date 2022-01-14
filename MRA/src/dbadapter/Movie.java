@@ -22,6 +22,9 @@ public class Movie {
 		this.direcotr = director;
 		this.Acotrs = actorList;
 	}
+	
+	public Movie() {}
+	
 	//Functions Section
 	public int getId() {
 		return id;
@@ -53,6 +56,8 @@ public class Movie {
 	public void setAcotrs(String acotrs) {
 		Acotrs = acotrs;
 	}
+	
+	@Override
 	public String toString() {
 		return "Movie " + id + " PubDate: " + this.OriginalPublishingDate +" director: " + this.direcotr
 				+ " title: " + this.title + " Actors " + this.Acotrs;
