@@ -13,14 +13,16 @@ public class Movie {
 	private String title;
 	private String direcotr;
 	private String Acotrs;
+	private double Rating; // unmapped attribute
 	
-	public Movie(int id, Timestamp pupDate, String title, String director, String actorList) {
+	public Movie(int id, Timestamp pupDate, String title, String director, String actorList, double rating) {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.OriginalPublishingDate = pupDate;
 		this.title = title;
 		this.direcotr = director;
 		this.Acotrs = actorList;
+		this.Rating = rating;
 	}
 	
 	public Movie() {}
@@ -61,5 +63,13 @@ public class Movie {
 	public String toString() {
 		return "Movie " + id + " PubDate: " + this.OriginalPublishingDate +" director: " + this.direcotr
 				+ " title: " + this.title + " Actors " + this.Acotrs;
+	}
+
+	public double getRating() {
+		return Rating;
+	}
+
+	public void setRating(double rating) {
+		Rating = rating;
 	}
 }

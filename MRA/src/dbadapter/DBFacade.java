@@ -72,8 +72,8 @@ public class DBFacade implements IMovie {
 		
 
 		// Declare the necessary SQL queries.
-		String sqlSelect = "select m.id, m.OriginalPublishingDate, m.title, m.director, m.ActorList from movie m inner join rating r on m.id = r.filmID\n"
-				+ "group by m.id\n"
+		String sqlSelect = "select m.id, m.OriginalPublishingDate, m.title, m.director, m.ActorList, COALESCE(avg(r.rating),0) as rating from movie m left join rating r on m.id = r.filmID\r\n"
+				+ "group by m.id\r\n"
 				+ "order by avg(r.rating) desc";
 
 		try (Connection connection = DriverManager.getConnection(url)) {
@@ -83,7 +83,7 @@ public class DBFacade implements IMovie {
 				try (ResultSet rs = ps.executeQuery()) {
 					while (rs.next()) {
 						Movie temp = new Movie(rs.getInt(1), rs.getTimestamp(2), rs.getString(3), rs.getString(4),
-								rs.getString(5));
+								rs.getString(5),rs.getDouble(6));
 						result.add(temp);
 					}
 				} catch (Exception e) {

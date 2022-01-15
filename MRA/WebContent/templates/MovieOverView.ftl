@@ -22,7 +22,7 @@
                   <th width="20%" style="text-align: center">Director</th>
                   <th width="20%" style="text-align: center">Publishing Date</th>
                   <th width="20%" style="text-align: center">Actors</th>
-                  <th width="20%" style="text-align: center">Rate Movie</th>
+                  <th width="20%" style="text-align: center">Avg Rating</th>
                </tr>
             </thead>
             <tbody>
@@ -49,9 +49,9 @@
                      </span>
                   </td>
                   <td style="text-align: center">
-                     <form action="/RateMovie?FilmID= ${movieList.getId()}" method="POST">
-                        <input type="submit" value="Rate" class="btn btn-block btn-primary"/>
-                     </form>
+                     <span>
+                     ${movieList.getRating()}
+                     </span>
                   </td>
                </tr>
                </#list>
