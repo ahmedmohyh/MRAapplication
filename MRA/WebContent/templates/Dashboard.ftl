@@ -16,9 +16,8 @@
    </section>
    <!-- Main content -->
    <section class="content">
-      <div class="container py-4">
-       <div class="card rounded shadow-sm">
-         <div class="card-body">
+      <div class="container-fluid">
+
          <div class="row">
          
          <!-- Card Sample --> 
@@ -28,7 +27,7 @@
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>
-                        <i class="fas fa-file x-fa x-darkcolor mt-2 mb-2"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                         </span>
                         <h2 class="x-card-title x-color mb-1">Movie OverView</h2>
                         <div class="card-text">Here you can show all movies order by rating in an descending manner</div>
@@ -46,7 +45,7 @@
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>
-                        <i class="fas fa-file x-fa x-darkcolor mt-2 mb-2"></i>
+                        <i class="fas fa-plus"></i>
                         </span>
                         <h2 class="x-card-title x-color mb-1">Add Movie</h2>
                         <div class="card-text">Here you can add a non exising film to the database</div>
@@ -64,7 +63,7 @@
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>
-                        <i class="fas fa-file x-fa x-darkcolor mt-2 mb-2"></i>
+                        <i class="fas fa-gavel"></i>
                         </span>
                         <h2 class="x-card-title x-color mb-1">Rate Movie</h2>
                         <div class="card-text">Here You can Rate the movies of your Choice u already watched</div>
@@ -82,7 +81,7 @@
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>
-                        <i class="fas fa-file x-fa x-darkcolor mt-2 mb-2"></i>
+                        <i class="fas fa-sign-in-alt"></i>
                         </span>
                         <h2 class="x-card-title x-color mb-1">Registeration</h2>
                         <div class="card-text">Here you can register a new user </div>
@@ -93,8 +92,6 @@
             
               <!-- /Card Sample --> 
          </div>
-          </div>
-           </div>
       </div>
    </section>
 </div>
