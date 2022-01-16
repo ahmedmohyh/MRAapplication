@@ -12,7 +12,7 @@
             <div class="form-group row mb-2">
                 <p class="col-sm-2 mb-2">Username :</p>
                 <div class="p-0 col-sm-6 mb-2">
-                    <input type="text" name="title" class="form-control mb-2" required/>
+                    <input type="text" name="username" class="form-control mb-2" required/>
                 </div>
             </div>
             
@@ -20,7 +20,7 @@
             <div class="form-group row mb-2">
                 <p class="col-sm-2 mb-2">Email :</p>
                 <div class="p-0 col-sm-6 mb-2">
-                    <input type="text" name="title" class="form-control mb-2" required/>
+                    <input type="text" name="email" class="form-control mb-2" required/>
                 </div>
             </div>
             

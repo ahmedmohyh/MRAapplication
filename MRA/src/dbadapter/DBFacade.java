@@ -25,7 +25,6 @@ import interfaces.IMovie;
  */
 public class DBFacade implements IMovie {
 	private static DBFacade instance;
-	private boolean complete = true;
 
 	/**
 	 * Constructor which loads the corresponding driver for the chosen database type
