@@ -40,7 +40,7 @@
              <!-- Card Sample --> 
          
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 " style="margin-bottom: 15px;">
-               <a class="x-a" href="#">
+               <a class="x-a" href="add_movie">
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>
@@ -58,7 +58,7 @@
                    <!-- Card Sample --> 
          
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-bottom: 15px;">
-               <a class="x-a" href="#">
+               <a class="x-a" href="rate_movie">
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>
@@ -76,7 +76,7 @@
                <!-- Card Sample --> 
          
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="margin-bottom: 15px;">
-               <a class="x-a" href="#">
+               <a class="x-a" href="reg">
                   <div class="card text-center x-card x-card-height180 x-linkcard" style="padding-bottom: 0.5rem;">
                      <div class="card-body">
                         <span>

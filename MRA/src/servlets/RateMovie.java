@@ -64,8 +64,7 @@ public class RateMovie extends HttpServlet {
 			}else {
 				String msg = "Rating error: You can't rate same move twice.";
 				Error404Servlet error = new Error404Servlet(msg);
-				error.doGet(request, response);
-				
+				error.doGet(request, response);	
 			}
 		}
 	}

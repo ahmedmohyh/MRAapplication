@@ -82,6 +82,25 @@
     <servlet-name>RateMovie_servlet</servlet-name>
     <url-pattern>/rate_movie</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>Register_servlet</servlet-name>
+    <servlet-class>servlets.Registration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register_servlet</servlet-name>
+    <url-pattern>/reg</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddMovie_servlet</servlet-name>
+    <servlet-class>servlets.AddMovie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddMovie_servlet</servlet-name>
+    <url-pattern>/add_movie</url-pattern>
+  </servlet-mapping>
+  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>FreeMarker MVC Views</web-resource-name>

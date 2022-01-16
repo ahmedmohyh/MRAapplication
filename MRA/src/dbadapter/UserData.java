@@ -12,9 +12,9 @@ public class UserData {
 	
 	public UserData() {
 		// TODO Auto-generated constructor stub
-		this.username = "ahmed";
+		this.username = "kentnard";
 		this.age = 22;
-		this.email = "blablabla@gmail.com";
+		this.email = "kentnard@gmail.com";
 	}
 	
 	//Functions Section

@@ -1,6 +1,6 @@
 /**
- * The DBFacade Class which contains all our SQL statments which go directly with the database
- * All the methods have to first in the Interface Imovie and then override and implement 
+ * The DBFacade Class which contains all our SQL statements which go directly with the database
+ * All the methods have to first in the Interface IMovie and then override and implement 
  * @autor Ahmed Mousa.
  */
 
@@ -82,7 +82,7 @@ public class DBFacade implements IMovie {
 
 				try (ResultSet rs = ps.executeQuery()) {
 					while (rs.next()) {
-						Movie temp = new Movie(rs.getInt(1), rs.getTimestamp(2), rs.getString(3), rs.getString(4),
+						Movie temp = new Movie(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
 								rs.getString(5),rs.getDouble(6));
 						result.add(temp);
 					}
@@ -158,4 +158,57 @@ public class DBFacade implements IMovie {
 		}
 		return true;
 	}
+	
+	/**
+	 * This function adds new film to the database, but it first checks whether the film was already in the database
+	 * and if it was there it will return false and not add it
+	 * @return true if the film is added successfully,otherwise false
+	 * @autor Osama Elsafty
+	 */
+	@Override
+	public boolean insertFilm(Movie film) {
+		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
+		+ "&useUnicode=true&characterEncoding=UTF-8"
+		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
+		
+		String queryFilm = "SELECT * FROM movie WHERE title=? AND OriginalPublishingDate=?;";
+		String insertFilmSql= "NSERT INTO movie (OriginalPublishingDate, title, director, Actorlist) values (?,?,?,?)";
+		
+		try (Connection connection = DriverManager.getConnection(url)) {
+			// Checking if the Movie already exists 
+			try (PreparedStatement ps = connection.prepareStatement(queryFilm)) {
+				ps.setString(1, film.getTitle());
+				ps.setString(2, film.getOriginalPublishingDate());
+				ResultSet rs = ps.executeQuery();
+				
+				if(rs.next() == false){
+					//Meaning that the film wasn't originally in the database
+					try(PreparedStatement ps2 = connection.prepareStatement(insertFilmSql)) {
+						ps2.setString(1, film.getOriginalPublishingDate());
+						ps2.setString(2, film.getTitle());
+						ps2.setString(3, film.getDirector());
+						ps2.setString(4, film.getActors());
+						ps2.executeUpdate();
+					}
+					catch (Exception e) {
+						e.printStackTrace();
+						System.out.println("hi i got catched1");
+						return false;
+					}	
+				}
+			}	
+			catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("hi i got catched2");
+				return false;
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("hi i got catched3");
+			return false;
+		}
+		return true;
+	}
 }
+	

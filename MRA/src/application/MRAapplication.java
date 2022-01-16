@@ -46,5 +46,11 @@ public class MRAapplication implements Usermds {
 		
 			return DBFacade.getInstance().insertRating(rate);
 	}
+	
+	@Override
+	public boolean insertFilm(Movie film) {
+		
+			return DBFacade.getInstance().insertFilm(film);
+	}
 
 }

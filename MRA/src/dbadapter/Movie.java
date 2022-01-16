@@ -9,19 +9,19 @@ import java.sql.Timestamp;
 public class Movie {
 	//Attributes Section
 	private int id;
-	private Timestamp OriginalPublishingDate;
+	private String OriginalPublishingDate;
 	private String title;
-	private String direcotr;
-	private String Acotrs;
+	private String director;
+	private String Actors;
 	private double Rating; // unmapped attribute
 	
-	public Movie(int id, Timestamp pupDate, String title, String director, String actorList, double rating) {
+	public Movie(int id, String pupDate, String title, String director, String actorList, double rating) {
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.OriginalPublishingDate = pupDate;
 		this.title = title;
-		this.direcotr = director;
-		this.Acotrs = actorList;
+		this.director = director;
+		this.Actors = actorList;
 		this.Rating = rating;
 	}
 	
@@ -37,7 +37,7 @@ public class Movie {
 	public String getOriginalPublishingDate() {
 		return OriginalPublishingDate.toString();
 	}
-	public void setOriginalPublishingDate(Timestamp originalPublishingDate) {
+	public void setOriginalPublishingDate(String originalPublishingDate) {
 		OriginalPublishingDate = originalPublishingDate;
 	}
 	public String getTitle() {
@@ -46,23 +46,23 @@ public class Movie {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDirecotr() {
-		return direcotr;
+	public String getDirector() {
+		return director;
 	}
-	public void setDirecotr(String direcotr) {
-		this.direcotr = direcotr;
+	public void setDirector(String director) {
+		this.director = director;
 	}
-	public String getAcotrs() {
-		return Acotrs;
+	public String getActors() {
+		return Actors;
 	}
-	public void setAcotrs(String acotrs) {
-		Acotrs = acotrs;
+	public void setActors(String actors) {
+		Actors = actors;
 	}
 	
 	@Override
 	public String toString() {
-		return "Movie " + id + " PubDate: " + this.OriginalPublishingDate +" director: " + this.direcotr
-				+ " title: " + this.title + " Actors " + this.Acotrs;
+		return "Movie " + id + " PubDate: " + this.OriginalPublishingDate +" director: " + this.director
+				+ " title: " + this.title + " Actors " + this.Actors;
 	}
 
 	public double getRating() {

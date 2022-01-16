@@ -24,6 +24,7 @@ public interface Usermds {
 	public ArrayList<Movie> getUserMovies();
 	public ArrayList<Movie> getUserMoviesForRating();
 	public boolean insertRating(Rating rate);
+	public boolean insertFilm(Movie film);
 
 	//TODO: Add All your functions that should be implemented in MRA!!,
 }

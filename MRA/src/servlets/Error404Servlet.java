@@ -21,6 +21,10 @@ public class Error404Servlet extends HttpServlet {
 	public Error404Servlet(String msg) {
 		this.message = msg;
 	}
+	
+	public Error404Servlet() {
+		
+	}
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) {
