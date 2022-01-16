@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import application.MRAapplication;
+
 /**
  * 
  * @author Ahmed Mousa
@@ -24,9 +26,8 @@ public class WelcomeServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) {
 		
-		// Set pagetitle and navtype
 		request.setAttribute("pagetitle", "Welcome");
-
+		request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 		// Dispatch request to template engine
 		try {
 			request.getRequestDispatcher("/templates/index.ftl").forward(

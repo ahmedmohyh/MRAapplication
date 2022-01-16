@@ -16,7 +16,7 @@ import interfaces.Usermds;
 public class MRAapplication implements Usermds {
 
 	private static MRAapplication instance;
-
+	private String LoggedUserName = null;
 	/**
 	 * Implementation of the Singleton pattern.
 	 * 
@@ -57,5 +57,16 @@ public class MRAapplication implements Usermds {
 	@Override
 	public boolean insertUserData(UserData ud) {
 			return DBFacade.getInstance().insertUserData(ud);
+	}
+
+	public String getLoggedUserName() {
+		if (this.LoggedUserName == null)
+		    return "No Loggedin user";
+		else 
+			return this.LoggedUserName;
+	}
+
+	public void setLoggedUserName(String loggedUserName) {
+		LoggedUserName = loggedUserName;
 	}
 }

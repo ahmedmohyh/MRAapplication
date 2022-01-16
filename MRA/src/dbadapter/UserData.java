@@ -11,10 +11,7 @@ public class UserData {
 	private String username;
 	
 	public UserData() {
-		// TODO Auto-generated constructor stub
-		this.username = "kentnard";
-		this.age = 22;
-		this.email = "kentnard@gmail.com";
+		
 	}
 	
 	//Functions Section

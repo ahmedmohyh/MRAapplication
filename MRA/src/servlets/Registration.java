@@ -22,14 +22,12 @@ public class Registration extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		//Only for testing 
-		System.out.println("hi i got here");
-
 		
 		request.setAttribute("pagetitle", "Registration");
-					
+		 request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 		try {
 			 request.getRequestDispatcher("/templates/Registration.ftl").forward(request, response);
-			       System.out.println("hi i got after forwarding");
+			       
 		} catch (ServletException | IOException e) {
 			request.setAttribute("errormessage", "Template error: please contact the administrator");
 			e.printStackTrace();
@@ -54,6 +52,7 @@ public class Registration extends HttpServlet {
 			error.doGet(request, response);
 		}else {
 			if(mrApp.insertUserData(newUD)) {
+				mrApp.setLoggedUserName(newUD.get_username());
 				FeedbackServlet feedback = new FeedbackServlet("The user is registerd successfully","Success", true);
 				feedback.doGet(request, response);
 			}else {

@@ -11,12 +11,14 @@
             <div class="col-sm-6">
             </div>
          </div>
-      </div>
+     
       
    </section>
    <!-- Main content -->
    <section class="content">
-      <div class="container-fluid">
+      <div class="container py-4">
+       <div class="card rounded shadow-sm">
+         <div class="card-body">
          <div class="row">
          
          <!-- Card Sample --> 
@@ -91,6 +93,8 @@
             
               <!-- /Card Sample --> 
          </div>
+          </div>
+           </div>
       </div>
    </section>
 </div>

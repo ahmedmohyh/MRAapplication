@@ -12,7 +12,6 @@ import application.MRAapplication;
 
 import dbadapter.Movie;
 import dbadapter.Rating;
-import dbadapter.UserData;
 
 public class RateMovie extends HttpServlet {
 
@@ -23,10 +22,20 @@ public class RateMovie extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		
+	       if (MRAapplication.getInstance().getLoggedUserName().equals("No Loggedin user"))
+	       {
+	    	   FeedbackServlet error = new FeedbackServlet("there is no logged in user go to Registeration first","Error", false);
+				error.doGet(request, response);
+	       }
+	       else {
+	    	   
+	      
 		MRAapplication mrApp =  MRAapplication.getInstance();
 		ArrayList<Movie> listOfMovies = mrApp.getUserMoviesForRating();
 		// Dispatch request to template engine
         request.setAttribute("pagetitle", "Rate the Movie");
+        request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 		request.setAttribute("listOfMovies", listOfMovies);
 		try {
 			request.getRequestDispatcher("/templates/RateMovie.ftl").forward(request, response);
@@ -35,6 +44,7 @@ public class RateMovie extends HttpServlet {
 					"Template error: please contact the administrator");
 			e.printStackTrace();
 		}
+	       }
 	}
 
 	/**
@@ -44,12 +54,17 @@ public class RateMovie extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		MRAapplication mrApp =  MRAapplication.getInstance();
 		Rating newRate = new Rating();
-		UserData user = new UserData();
+		String userName = mrApp.getLoggedUserName();
 		
+		if (userName == null || userName.equals("No Loggedin user")) {
+			FeedbackServlet error = new FeedbackServlet("there is no logged in user ","Error", false);
+			error.doGet(request, response);
+		}
+		else {
 		newRate.set_filmID(Integer.parseInt(request.getParameter("movieID")));
 		newRate.set_rating(Integer.parseInt(request.getParameter("ratingNumber")));
 		newRate.set_comment(request.getParameter("comment"));
-		newRate.set_username(user.get_username());
+		newRate.set_username(userName);
 		
 		if(newRate.get_rating() > 10 || newRate.get_rating() < 0) {
 			String msg = "Rating error: Rating number must be between 0 and 10.";
@@ -70,6 +85,7 @@ public class RateMovie extends HttpServlet {
 			}
 		}
 	}
+	} 
 	
 
 }

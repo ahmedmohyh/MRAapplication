@@ -25,24 +25,30 @@ public class MovieOverViewGUI extends HttpServlet {
 	 * doGet contains the insertOffer form
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-
+       if (MRAapplication.getInstance().getLoggedUserName().equals("No Loggedin user"))
+       {
+    	   FeedbackServlet error = new FeedbackServlet("there is no logged in user go to Registeration first","Error", false);
+			error.doGet(request, response);
+       }
 		//Only for testing 
-		System.out.println("hi i got here");
+       else {
+       System.out.println("hi i got here");
 		MRAapplication mrApp =  MRAapplication.getInstance();
 	       ArrayList<Movie> movieQuery = mrApp.getUserMovies();
 	       
 	        request.setAttribute("movies", movieQuery);
 	        request.setAttribute("pagetitle", "Welcome");
-			
+	        request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 	        try {
 	        	 request.getRequestDispatcher("/templates/MovieOverView.ftl").forward(request, response);
-	        	 System.out.println("hi i got after forwarding");
+	        	 
 			} catch (ServletException | IOException e) {
 				request.setAttribute("errormessage",
 						"Template error: please contact the administrator");
 				e.printStackTrace();
-				 System.out.println("hi i got catched");
+				
 			}
+       }
 	}
 
 	/**

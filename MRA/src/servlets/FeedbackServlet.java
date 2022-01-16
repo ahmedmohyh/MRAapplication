@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import application.MRAapplication;
+
 /**
  * Internal Servlet to print a nice form of 404 (webpage not found) error
  * 
@@ -30,10 +32,11 @@ public class FeedbackServlet extends HttpServlet {
 		
 	}
 
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) {
+		
 		request.setAttribute("pagetitle", pageTitle);
 		request.setAttribute("value", value);
+		request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 		try {
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("/templates/ResultFeedback.ftl").forward(

@@ -19,11 +19,14 @@ public class AddMovie extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-
-		//Only for testing 
-	        System.out.println("hi i got here");	       
+	       if (MRAapplication.getInstance().getLoggedUserName().equals("No Loggedin user"))
+	       {
+	    	   FeedbackServlet error = new FeedbackServlet("there is no logged in user go to Registeration first","Error", false);
+				error.doGet(request, response);
+	       }
+	       else {       
 	        request.setAttribute("pagetitle", "Add Movie");
-			
+	        request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 	        try {
 	        	 request.getRequestDispatcher("/templates/AddMovie.ftl").forward(request, response);
 	        	 System.out.println("hi i got after forwarding");
@@ -33,13 +36,20 @@ public class AddMovie extends HttpServlet {
 				e.printStackTrace();
 				 System.out.println("hi i got catched");
 			}
+	       }
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		MRAapplication mrApp =  MRAapplication.getInstance();
 		Movie newMovie = new Movie();
+         String userName = mrApp.getLoggedUserName();
 		
+		if (userName.equals("No Loggedin user")) {
+			FeedbackServlet error = new FeedbackServlet("there is no logged in user ","Error", false);
+			error.doGet(request, response);
+		}
+		else {
 		newMovie.setTitle(request.getParameter("title"));
 		newMovie.setDirector(request.getParameter("director"));
 		newMovie.setOriginalPublishingDate(request.getParameter("OriginalPublishingDate"));
@@ -54,5 +64,6 @@ public class AddMovie extends HttpServlet {
 			FeedbackServlet error = new FeedbackServlet(msg,"error Adding",false);
 			error.doGet(request, response);
 		}
+	}
 	}
 }

@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import application.MRAapplication;
+
 public class DashboardServlet  extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -14,20 +16,27 @@ public class DashboardServlet  extends HttpServlet {
 	 * @author Ahmed Mousa
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-
-		//Only for testing 
-	        System.out.println("hi i got here");	       
+		
+	       if (MRAapplication.getInstance().getLoggedUserName().equals("No Loggedin user"))
+	       {
+	    	   FeedbackServlet error = new FeedbackServlet("there is no logged in user go to Registeration first","Error", false);
+				error.doGet(request, response);
+	       }
+	       else {
+	       	       
 	        request.setAttribute("pagetitle", "Welcome");
-			
+	        request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 	        try {
 	        	 request.getRequestDispatcher("/templates/Dashboard.ftl").forward(request, response);
-	        	 System.out.println("hi i got after forwarding");
-			} catch (ServletException | IOException e) {
+	        	 
+			}
+	        catch (ServletException | IOException e) {
 				request.setAttribute("errormessage",
 						"Template error: please contact the administrator");
 				e.printStackTrace();
-				 System.out.println("hi i got catched");
+				
 			}
+	       }
 	}
 
 	/**
