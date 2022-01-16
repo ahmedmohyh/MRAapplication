@@ -53,14 +53,19 @@ public class RateMovie extends HttpServlet {
 		
 		if(newRate.get_rating() > 10 || newRate.get_rating() < 0) {
 			String msg = "Rating error: Rating number must be between 0 and 10.";
-			Error404Servlet error = new Error404Servlet(msg);
+			String title = "Rating Error";
+			Error404Servlet error = new Error404Servlet(msg,title, false);
 			error.doGet(request, response);
 		}else {
 			if(mrApp.insertRating(newRate)) {
-				doGet(request, response);
+				String msg = "Rating successfully: Your rating has been added successfully.";
+				String title = "Rated Sucessfully!";
+				Error404Servlet error = new Error404Servlet(msg,title, true);
+				error.doGet(request, response);	
 			}else {
 				String msg = "Rating error: You can't rate same move twice.";
-				Error404Servlet error = new Error404Servlet(msg);
+				String title = "Rating Error";
+				Error404Servlet error = new Error404Servlet(msg,title, false);
 				error.doGet(request, response);	
 			}
 		}

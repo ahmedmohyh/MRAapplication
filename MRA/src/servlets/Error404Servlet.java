@@ -17,9 +17,13 @@ public class Error404Servlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private String message;
+	private String pageTitle;
+	private boolean value;
 	
-	public Error404Servlet(String msg) {
+	public Error404Servlet(String msg, String title, boolean value) {
 		this.message = msg;
+		this.pageTitle = title;
+		this.value = value;
 	}
 	
 	public Error404Servlet() {
@@ -28,9 +32,10 @@ public class Error404Servlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) {
-		request.setAttribute("pagetitle", "Webpage not found");
+		request.setAttribute("pagetitle", pageTitle);
+		request.setAttribute("value", value);
 		try {
-			request.setAttribute("errormessage", message);
+			request.setAttribute("message", message);
 			request.getRequestDispatcher("/templates/error.ftl").forward(
 					request, response);
 		} catch (ServletException | IOException e) {
