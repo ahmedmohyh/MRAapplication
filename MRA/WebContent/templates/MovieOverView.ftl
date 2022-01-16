@@ -35,7 +35,7 @@
                   </td>
                   <td style="text-align: center">
                      <span>
-                     ${movieList.getDirecotr()}
+                     ${movieList.getDirector()}
                      </span>
                   </td>
                   <td style="text-align: center">
@@ -45,7 +45,7 @@
                   </td>
                   <td style="text-align: center">
                      <span>
-                     ${movieList.getAcotrs()}
+                  ${movieList.getActors()}   
                      </span>
                   </td>
                   <td style="text-align: center">
