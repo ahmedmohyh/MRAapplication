@@ -55,5 +55,8 @@ ALTER TABLE `Rating`
 ALTER TABLE `Rating`
     ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`);
 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`);
+
 
 COMMIT;
