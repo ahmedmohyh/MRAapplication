@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import interfaces.IMovie;
+import interfaces.IUser;
 //TODO:Implement your own methods that should interact directly with the database!
 
 /**
@@ -23,7 +24,7 @@ import interfaces.IMovie;
  * @author Ahmed Mousa
  *
  */
-public class DBFacade implements IMovie {
+public class DBFacade implements IMovie,IUser {
 	private static DBFacade instance;
 
 	/**

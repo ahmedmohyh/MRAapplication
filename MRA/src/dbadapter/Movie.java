@@ -4,8 +4,6 @@
 	 */
 
 package dbadapter;
-
-import java.sql.Timestamp;
 public class Movie {
 	//Attributes Section
 	private int id;

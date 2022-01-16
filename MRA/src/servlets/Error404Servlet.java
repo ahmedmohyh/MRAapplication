@@ -29,7 +29,6 @@ public class Error404Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) {
 		request.setAttribute("pagetitle", "Webpage not found");
-		request.setAttribute("navtype", "general");
 		try {
 			request.setAttribute("errormessage", message);
 			request.getRequestDispatcher("/templates/error.ftl").forward(

@@ -28,12 +28,11 @@ public class MovieOverViewGUI extends HttpServlet {
 
 		//Only for testing 
 		System.out.println("hi i got here");
-		MRAapplication mrApp = new MRAapplication();
+		MRAapplication mrApp =  MRAapplication.getInstance();
 	       ArrayList<Movie> movieQuery = mrApp.getUserMovies();
 	       
 	        request.setAttribute("movies", movieQuery);
 	        request.setAttribute("pagetitle", "Welcome");
-			request.setAttribute("navtype", "MovieQuery");
 			
 	        try {
 	        	 request.getRequestDispatcher("/templates/MovieOverView.ftl").forward(request, response);

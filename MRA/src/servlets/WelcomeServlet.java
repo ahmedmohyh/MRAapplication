@@ -26,7 +26,6 @@ public class WelcomeServlet extends HttpServlet {
 		
 		// Set pagetitle and navtype
 		request.setAttribute("pagetitle", "Welcome");
-		request.setAttribute("navtype", "general");
 
 		// Dispatch request to template engine
 		try {

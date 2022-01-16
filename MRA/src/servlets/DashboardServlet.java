@@ -18,7 +18,6 @@ public class DashboardServlet  extends HttpServlet {
 		//Only for testing 
 	        System.out.println("hi i got here");	       
 	        request.setAttribute("pagetitle", "Welcome");
-			request.setAttribute("navtype", "MovieQuery");
 			
 	        try {
 	        	 request.getRequestDispatcher("/templates/Dashboard.ftl").forward(request, response);

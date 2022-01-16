@@ -1,9 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,11 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import application.MRAapplication;
-import dbadapter.DBFacade;
 import dbadapter.Movie;
-import dbadapter.Rating;
-import dbadapter.UserData;
-import java.sql.Timestamp;
 
 public class AddMovie extends HttpServlet {
 
@@ -30,7 +23,6 @@ public class AddMovie extends HttpServlet {
 		//Only for testing 
 	        System.out.println("hi i got here");	       
 	        request.setAttribute("pagetitle", "Add Movie");
-			request.setAttribute("navtype", "MovieQuery");
 			
 	        try {
 	        	 request.getRequestDispatcher("/templates/AddMovie.ftl").forward(request, response);
@@ -45,7 +37,7 @@ public class AddMovie extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-		MRAapplication mrApp = new MRAapplication();
+		MRAapplication mrApp =  MRAapplication.getInstance();
 		Movie newMovie = new Movie();
 		
 		newMovie.setTitle(request.getParameter("title"));

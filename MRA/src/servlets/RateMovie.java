@@ -2,7 +2,6 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import application.MRAapplication;
-import dbadapter.DBFacade;
+
 import dbadapter.Movie;
 import dbadapter.Rating;
 import dbadapter.UserData;
@@ -24,12 +23,10 @@ public class RateMovie extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-		MRAapplication mrApp = new MRAapplication();
+		MRAapplication mrApp =  MRAapplication.getInstance();
 		ArrayList<Movie> listOfMovies = mrApp.getUserMoviesForRating();
 		// Dispatch request to template engine
         request.setAttribute("pagetitle", "Rate the Movie");
-        request.setAttribute("errormessage", "");
-		request.setAttribute("navtype", "RateQuery");
 		request.setAttribute("listOfMovies", listOfMovies);
 		try {
 			request.getRequestDispatcher("/templates/RateMovie.ftl").forward(request, response);
@@ -45,7 +42,7 @@ public class RateMovie extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-		MRAapplication mrApp = new MRAapplication();
+		MRAapplication mrApp =  MRAapplication.getInstance();
 		Rating newRate = new Rating();
 		UserData user = new UserData();
 		

@@ -1,8 +1,7 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import application.MRAapplication;
-import dbadapter.DBFacade;
-import dbadapter.Movie;
-import dbadapter.Rating;
+
 import dbadapter.UserData;
 
 public class Registration extends HttpServlet {
@@ -26,10 +23,9 @@ public class Registration extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		//Only for testing 
 		System.out.println("hi i got here");
-		MRAapplication mrApp = new MRAapplication();
+
 		
 		request.setAttribute("pagetitle", "Registration");
-		request.setAttribute("navtype", "MovieQuery");
 					
 		try {
 			 request.getRequestDispatcher("/templates/Registration.ftl").forward(request, response);
@@ -45,7 +41,7 @@ public class Registration extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-		MRAapplication mrApp = new MRAapplication();
+		MRAapplication mrApp =  MRAapplication.getInstance();
 		UserData newUD = new UserData();
 		
 		newUD.set_username(request.getParameter("username"));

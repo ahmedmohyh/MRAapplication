@@ -16,6 +16,5 @@ public interface IMovie {
 	public ArrayList<Movie> getUserMoviesForRating();
 	public boolean insertRating(Rating rate);
 	public boolean insertFilm(Movie film);
-	public boolean insertUserData(UserData ud);
 	//TODO add your function that should be coming from the database
 }
