@@ -84,12 +84,12 @@
   </servlet-mapping>
   
   <servlet>
-      <servlet-name>Register_servlet</servlet-name>
+    <servlet-name>Register_servlet</servlet-name>
     <servlet-class>servlets.Registration</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Register_servlet</servlet-name>
-    <url-pattern>/reg</url-pattern>
+    <url-pattern>/register_user</url-pattern>
   </servlet-mapping>
   
   <servlet>

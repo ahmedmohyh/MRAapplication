@@ -172,7 +172,7 @@ public class DBFacade implements IMovie {
 		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
 		
 		String queryFilm = "SELECT * FROM movie WHERE title=? AND OriginalPublishingDate=?;";
-		String insertFilmSql= "NSERT INTO movie (OriginalPublishingDate, title, director, Actorlist) values (?,?,?,?)";
+		String insertFilmSql= "INSERT INTO movie (OriginalPublishingDate, title, director, Actorlist) values (?,?,?,?)";
 		
 		try (Connection connection = DriverManager.getConnection(url)) {
 			// Checking if the Movie already exists 
@@ -210,5 +210,51 @@ public class DBFacade implements IMovie {
 		}
 		return true;
 	}
+	@Override
+	public boolean insertUserData(UserData ud) {
+		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
+		+ "&useUnicode=true&characterEncoding=UTF-8"
+		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
+		
+		String queryUserData = "SELECT * FROM userdata WHERE username = ?";
+		String insertUserData = "INSERT INTO userdata (userName, email, age) values (?, ?, ?)";
+		
+		try (Connection connection = DriverManager.getConnection(url)) {
+			try (PreparedStatement ps = connection.prepareStatement(queryUserData)) {
+				ps.setString(1, ud.get_username());
+				try (ResultSet rs = ps.executeQuery()) {
+					if (rs.next() == false) { 
+						System.out.println("hi there is no query");
+						try (PreparedStatement ps2 = connection.prepareStatement(insertUserData)){
+							ps2.setString(1, ud.get_username());
+							ps2.setString(2, ud.get_email());
+							ps2.setInt(3, ud.get_age());
+							ps2.executeUpdate();
+						}
+						catch (Exception e) {
+							e.printStackTrace();
+							System.out.println("hi i got catched1");
+							return false;
+						} 
+					}
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("hi i got catched2");
+					return false;	
+				} 
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("hi i got catched3");
+				return false;	
+			} 
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("hi i got catched4");
+			return false;
+		}
+		return true;
+	}
 }
-	

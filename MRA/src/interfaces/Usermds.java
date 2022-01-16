@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import dbadapter.Movie;
 import dbadapter.Rating;
+import dbadapter.UserData;
 
 /**
  * Interface that provides all method to interact with a guest.
@@ -25,6 +26,6 @@ public interface Usermds {
 	public ArrayList<Movie> getUserMoviesForRating();
 	public boolean insertRating(Rating rate);
 	public boolean insertFilm(Movie film);
-
+	public boolean insertUserData(UserData ud);
 	//TODO: Add All your functions that should be implemented in MRA!!,
 }

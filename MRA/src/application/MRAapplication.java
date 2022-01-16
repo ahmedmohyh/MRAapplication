@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import dbadapter.DBFacade;
 import dbadapter.Movie;
 import dbadapter.Rating;
+import dbadapter.UserData;
 import interfaces.Usermds;
 
 /**
@@ -52,5 +53,9 @@ public class MRAapplication implements Usermds {
 		
 			return DBFacade.getInstance().insertFilm(film);
 	}
-
+	
+	@Override
+	public boolean insertUserData(UserData ud) {
+			return DBFacade.getInstance().insertUserData(ud);
+	}
 }

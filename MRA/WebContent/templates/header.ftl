@@ -40,7 +40,7 @@
       <a class="nav-item nav-link " href="AllMovieOverView">Movie Overview <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="add_movie">Add Movie</a>
       <a class="nav-item nav-link" href="./rate_movie">Rate Movie</a>
-      <a class="nav-item nav-link " href="reg">Registration</a>
+      <a class="nav-item nav-link " href="register_user">Registration</a>
     </div>
   </div>
 </nav>
