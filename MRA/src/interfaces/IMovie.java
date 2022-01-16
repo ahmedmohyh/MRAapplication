@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 import dbadapter.Movie;
 import dbadapter.Rating;
-import dbadapter.UserData;
 
 /**
  * Interface for DBFacade to provide all necessary database function.
