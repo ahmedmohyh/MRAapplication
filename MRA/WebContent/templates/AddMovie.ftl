@@ -28,7 +28,7 @@
             <div class="form-group row mb-2">
                 <p class="col-sm-2 mb-2"> Original Publishing Date :</p>
                 <div class="p-0 col-sm-6 mb-2">
-                    <input type="datetime-local" name="originalPublishingDate" class="form-control mb-2" required/>
+                    <input type="datetime-local" name="OriginalPublishingDate" class="form-control mb-2" required/>
                 </div>
             </div>
             
@@ -36,7 +36,7 @@
             <div class="form-group row mb-2">
                 <p class="col-sm-2 mb-2">Main Actor List :</p>
                 <div class="p-0 col-sm-6 mb-2">
-                    <input type="text" name="mainActorList" class="form-control mb-2" required/>
+                    <input type="text" name="Actors" class="form-control mb-2" required/>
                 </div>
             </div>
             

@@ -60,7 +60,7 @@ public class Registration extends HttpServlet {
 			if(mrApp.insertUserData(newUD)) {
 				doGet(request, response);
 			}else {
-				String msg = "Register error: Username and email must be unique.";
+				String msg = "Register error: Username must be unique.";
 				Error404Servlet error = new Error404Servlet(msg);
 				error.doGet(request, response);
 			}

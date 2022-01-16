@@ -56,5 +56,10 @@ public class AddMovie extends HttpServlet {
 		if(mrApp.insertFilm(newMovie)) {
 			doGet(request, response);
 		}
+		else {
+			String msg = "Register error: Movie already existed in the database";
+			Error404Servlet error = new Error404Servlet(msg);
+			error.doGet(request, response);
+		}
 	}
 }

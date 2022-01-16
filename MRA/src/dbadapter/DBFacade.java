@@ -170,41 +170,48 @@ public class DBFacade implements IMovie {
 		+ "&useUnicode=true&characterEncoding=UTF-8"
 		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
 		
-		String queryFilm = "SELECT * FROM movie WHERE title=? AND OriginalPublishingDate=?;";
+		String queryFilm = "SELECT * FROM movie WHERE title = ? AND OriginalPublishingDate=?;";
 		String insertFilmSql= "INSERT INTO movie (OriginalPublishingDate, title, director, Actorlist) values (?,?,?,?)";
 		
 		try (Connection connection = DriverManager.getConnection(url)) {
-			// Checking if the Movie already exists 
 			try (PreparedStatement ps = connection.prepareStatement(queryFilm)) {
 				ps.setString(1, film.getTitle());
 				ps.setString(2, film.getOriginalPublishingDate());
-				ResultSet rs = ps.executeQuery();
-				
-				if(rs.next() == false){
-					//Meaning that the film wasn't originally in the database
-					try(PreparedStatement ps2 = connection.prepareStatement(insertFilmSql)) {
-						ps2.setString(1, film.getOriginalPublishingDate());
-						ps2.setString(2, film.getTitle());
-						ps2.setString(3, film.getDirector());
-						ps2.setString(4, film.getActors());
-						ps2.executeUpdate();
+				try (ResultSet rs = ps.executeQuery()) {
+					if (rs.next() == false) { 
+						System.out.println("hi, there is no query for film");
+						try (PreparedStatement ps2 = connection.prepareStatement(insertFilmSql)){
+							ps2.setString(1, film.getOriginalPublishingDate());
+							ps2.setString(2, film.getTitle());
+							ps2.setString(3, film.getDirector());
+							ps2.setString(4, film.getActors());
+							ps2.executeUpdate();
+						}
+						catch (Exception e) {
+							e.printStackTrace();
+							System.out.println("hi i got catched1");
+							return false;
+						} 
 					}
-					catch (Exception e) {
-						e.printStackTrace();
-						System.out.println("hi i got catched1");
+					else {
 						return false;
-					}	
-				}
-			}	
+					}
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.out.println("hi i got catched2");
+					return false;	
+				} 
+			}
 			catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("hi i got catched2");
-				return false;
-			}
+				System.out.println("hi i got catched3");
+				return false;	
+			} 
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("hi i got catched3");
+			System.out.println("hi i got catched4");
 			return false;
 		}
 		return true;
@@ -235,6 +242,9 @@ public class DBFacade implements IMovie {
 							System.out.println("hi i got catched1");
 							return false;
 						} 
+					}
+					else {
+						return false;
 					}
 					
 				} catch (Exception e) {
