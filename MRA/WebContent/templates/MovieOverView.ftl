@@ -5,7 +5,7 @@
          <div class="row mb-2">
             <div class="col-sm-6 ">
                <h3>Welcome to our All Movies Page</h3>
-               <p>This is just for testing purposes </p>
+               <p>Here is a list of all Movies ordered by average rating descendingly </p>
             </div>
             <div class="col-sm-6">
             </div>

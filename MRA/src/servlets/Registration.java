@@ -50,14 +50,15 @@ public class Registration extends HttpServlet {
 		
 		if(newUD.get_age() < 18) {
 			String msg = "Register error: You must be at least 18 years old.";
-			Error404Servlet error = new Error404Servlet(msg);
+			FeedbackServlet error = new FeedbackServlet(msg,"Age invalid",false);
 			error.doGet(request, response);
 		}else {
 			if(mrApp.insertUserData(newUD)) {
-				doGet(request, response);
+				FeedbackServlet feedback = new FeedbackServlet("The user is registerd successfully","Success", true);
+				feedback.doGet(request, response);
 			}else {
 				String msg = "Register error: Username must be unique.";
-				Error404Servlet error = new Error404Servlet(msg);
+				FeedbackServlet error = new FeedbackServlet(msg,"Error Adding",false);
 				error.doGet(request, response);
 			}
 		}

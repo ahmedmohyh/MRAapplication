@@ -46,11 +46,12 @@ public class AddMovie extends HttpServlet {
 		newMovie.setActors(request.getParameter("Actors"));
 		
 		if(mrApp.insertFilm(newMovie)) {
-			doGet(request, response);
+			FeedbackServlet feedback = new FeedbackServlet("The film is added successfully","Success", true);
+			feedback.doGet(request, response);
 		}
 		else {
 			String msg = "Register error: Movie already existed in the database";
-			Error404Servlet error = new Error404Servlet(msg);
+			FeedbackServlet error = new FeedbackServlet(msg,"error Adding",false);
 			error.doGet(request, response);
 		}
 	}
