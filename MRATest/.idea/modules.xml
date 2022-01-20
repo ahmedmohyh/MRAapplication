@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MRA/MRA.iml" filepath="$PROJECT_DIR$/../MRA/MRA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MRATest.iml" filepath="$PROJECT_DIR$/MRATest.iml" />
+    </modules>
+  </component>
+</project>
