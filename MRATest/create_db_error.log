@@ -1,0 +1,270 @@
+
+-------
+22/45/2022 17:45:13
+-------
+
+
+-------
+22/46/2022 17:46:59
+-------
+
+
+-------
+22/55/2022 17:55:15
+-------
+
+
+-------
+22/58/2022 17:58:53
+-------
+
+
+-------
+22/00/2022 18:00:48
+-------
+
+
+-------
+22/02/2022 18:02:50
+-------
+
+
+-------
+22/02/2022 18:02:59
+-------
+
+
+-------
+22/18/2022 18:18:03
+-------
+
+Error executing 'CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 14): No database selected
+Error executing 'ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) ' (line 17): No database selected
+Error executing 'ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 20): No database selected
+Error executing '  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 27): No database selected
+Error executing 'ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) ' (line 30): No database selected
+Error executing 'ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 33): No database selected
+Error executing '  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 41): No database selected
+Error executing 'ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) ' (line 44): No database selected
+Error executing 'ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) ' (line 47): No database selected
+Error executing 'ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) ' (line 50): No database selected
+Error executing 'ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 53): No database selected
+Error executing 'ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) ' (line 56): No database selected
+Error executing '  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) ' (line 59): No database selected
+
+-------
+22/19/2022 18:19:38
+-------
+
+Error executing 'CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 14): No database selected
+Error executing 'ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) ' (line 17): No database selected
+Error executing 'ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 20): No database selected
+Error executing '  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 27): No database selected
+Error executing 'ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) ' (line 30): No database selected
+Error executing 'ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 33): No database selected
+Error executing '  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 41): No database selected
+Error executing 'ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) ' (line 44): No database selected
+Error executing 'ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) ' (line 47): No database selected
+Error executing 'ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) ' (line 50): No database selected
+Error executing 'ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 53): No database selected
+Error executing 'ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) ' (line 56): No database selected
+Error executing '  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) ' (line 59): No database selected
+
+-------
+22/20/2022 18:20:08
+-------
+
+Error executing 'CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 14): No database selected
+Error executing 'ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) ' (line 17): No database selected
+Error executing 'ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 20): No database selected
+Error executing '  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 27): No database selected
+Error executing 'ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) ' (line 30): No database selected
+Error executing 'ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 33): No database selected
+Error executing '  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ' (line 41): No database selected
+Error executing 'ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) ' (line 44): No database selected
+Error executing 'ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) ' (line 47): No database selected
+Error executing 'ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) ' (line 50): No database selected
+Error executing 'ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT ' (line 53): No database selected
+Error executing 'ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) ' (line 56): No database selected
+Error executing '  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) ' (line 59): No database selected
+
+-------
+22/24/2022 18:24:00
+-------
+
+
+-------
+22/25/2022 18:25:02
+-------
+
+
+-------
+22/25/2022 18:25:25
+-------
+
+
+-------
+22/31/2022 18:31:54
+-------
+
+
+-------
+22/32/2022 18:32:09
+-------
+
+
+-------
+22/32/2022 18:32:34
+-------
+
+
+-------
+22/34/2022 18:34:13
+-------
+
+
+-------
+22/34/2022 18:34:39
+-------
+
+
+-------
+22/35/2022 18:35:05
+-------
+
+
+-------
+22/36/2022 18:36:12
+-------
+
+
+-------
+22/36/2022 18:36:27
+-------
+
+
+-------
+22/37/2022 18:37:22
+-------
+
+
+-------
+22/37/2022 18:37:49
+-------
+
+
+-------
+22/39/2022 18:39:32
+-------
+
+
+-------
+22/39/2022 18:39:39
+-------
+
+
+-------
+22/39/2022 18:39:41
+-------
+
+
+-------
+22/39/2022 18:39:43
+-------
+
+
+-------
+22/39/2022 18:39:46
+-------
+
+
+-------
+22/40/2022 18:40:13
+-------
+
+
+-------
+22/43/2022 18:43:30
+-------
+
