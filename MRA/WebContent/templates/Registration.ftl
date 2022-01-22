@@ -6,7 +6,7 @@
          <h2 class="text mb-4">Register!</h2>
         </div>
           <!-- Form is used for items that will take input from the user -->
-          <form id = "registerForm" name="registerForm" method="POST" action="register_user">
+          <form name="ratingForm" method="POST" action="register_user">
           
             <!-- Entering the username -->
             <div class="form-group row mb-2">
@@ -31,8 +31,9 @@
                     <input type="number" name="age" class="form-control mb-2" value="0" required/>
                 </div>
             </div>
-            <button type="submit" value="submit" name="registerButton" id="registerButton" class="btn btn-primary mb-2 d-block float-end" href="register_user">Register!</button>
-          </form>        
+            
+            <button type="submit" value="submit" class="btn btn-primary mb-2 d-block float-end" href="register_user">Register!</button>
+          </form>
         </div>
       </div>
     </div>

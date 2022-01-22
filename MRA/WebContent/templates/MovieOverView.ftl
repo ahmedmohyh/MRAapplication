@@ -15,7 +15,7 @@
    <!-- Main content -->
    <section class="content">
       <div class="container-fluid">
-         <table id="tblMovies" name ="tblMovies" class="x-table table table-sm table-hover table-bordered table-striped searchable mt-2">
+         <table id="tblMovies" class="x-table table table-sm table-hover table-bordered table-striped searchable mt-2">
             <thead>
                <tr>
                   <th width="20%" style="text-align: center">Title</th>

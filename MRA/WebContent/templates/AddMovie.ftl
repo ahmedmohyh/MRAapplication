@@ -40,7 +40,7 @@
                 </div>
             </div>
             
-            <button type="submit" value="submit" id = "addMovieButton" name = "addMovieButton" class="btn btn-primary mb-2 d-block float-end" href="add_movie">Add Movie!</button>
+            <button type="submit" value="submit" class="btn btn-primary mb-2 d-block float-end" href="add_movie">Add Movie!</button>
           </form>
         </div>
       </div>

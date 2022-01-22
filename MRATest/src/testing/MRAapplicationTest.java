@@ -18,8 +18,9 @@ public class MRAapplicationTest extends TestCase {
 	
 	@Test
 	public void testByDefault() {
-		DBFacade stub = mock(DBFacade.class);
-		DBFacade.setInstance(stub);
+		//DBFacade stub = mock(DBFacade.class);
+		//DBFacade.setInstance(stub);
 		System.out.println("TEST");
 	}
+
 }

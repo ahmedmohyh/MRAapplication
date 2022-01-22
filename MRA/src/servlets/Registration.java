@@ -24,7 +24,7 @@ public class Registration extends HttpServlet {
 		//Only for testing 
 		
 		request.setAttribute("pagetitle", "Registration");
-		request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
+		 request.setAttribute("LoggedUser", MRAapplication.getInstance().getLoggedUserName());
 		try {
 			 request.getRequestDispatcher("/templates/Registration.ftl").forward(request, response);
 			       
