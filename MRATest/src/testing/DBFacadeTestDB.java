@@ -1,6 +1,9 @@
 package testing;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -40,6 +43,7 @@ public class DBFacadeTestDB extends TestCase {
 
 		// SQL statements
 		String sqlCleanDB = "DROP DATABASE mra IF EXISTS";
+		String createMraDB = "CREATE DATABASE mra";
 
 		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword()
 				+ "&useUnicode=true&characterEncoding=UTF-8"
@@ -47,7 +51,14 @@ public class DBFacadeTestDB extends TestCase {
 
 		String sqlInsertMovieToDataBaseMRA = "INSERT INTO movie (OriginalPublishingDate, title, director, Actorlist) values (?,?,?,?)";
 
-		String sqlCreateDataBaseMRA = "SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";\n" +
+		try {
+			Path sqlScript = Path.of("SQLForMra.sql");
+			String sqlCreateDataBaseTables2 = Files.readString(sqlScript);
+		}catch (IOException e){
+			e.printStackTrace();
+		}
+
+		String sqlCreateDataBaseTables = "SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";\n" +
 				"SET AUTOCOMMIT = 0;\n" +
 				"START TRANSACTION;\n" +
 				"SET time_zone = \"+00:00\";\n" +
@@ -108,6 +119,7 @@ public class DBFacadeTestDB extends TestCase {
 				"\n" +
 				"COMMIT;";
 
+
 		// Perform database updates
 		try (Connection connection = DriverManager
 				.getConnection(url)) {
@@ -115,7 +127,10 @@ public class DBFacadeTestDB extends TestCase {
 			try (PreparedStatement psClean = connection.prepareStatement(sqlCleanDB)) {
 				psClean.executeUpdate();
 			}
-			try (PreparedStatement psCreateDataBaseMra = connection.prepareStatement(sqlCreateDataBaseMRA)) {
+			try (PreparedStatement psCreate = connection.prepareStatement(createMraDB)) {
+				psCreate.executeUpdate();
+			}
+			try (PreparedStatement psCreateDataBaseMra = connection.prepareStatement(sqlCreateDataBaseTables)) {
 				psCreateDataBaseMra.executeUpdate();
 			}
 			try (PreparedStatement psInsertMovie = connection.prepareStatement(sqlInsertMovieToDataBaseMRA)) {
