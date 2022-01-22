@@ -39,7 +39,7 @@ public class DBFacadeTestDB extends TestCase {
 		testMovie.setOriginalPublishingDate("1972-05-02 12:20:00");
 
 		// SQL statements
-		String sqlCleanDB = "DROP DATABASE mar EXISTS";
+		String sqlCleanDB = "DROP DATABASE mra IF EXISTS";
 
 		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword()
 				+ "&useUnicode=true&characterEncoding=UTF-8"
