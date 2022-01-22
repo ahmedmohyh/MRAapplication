@@ -4,16 +4,6 @@
     <facet type="web" name="Web">
       <configuration>
         <descriptors>
-          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/WebContent/WEB-INF/lib/web.xml" />
-        </descriptors>
-        <webroots>
-          <root url="file://$MODULE_DIR$/WebContent/WEB-INF/lib" relative="/WEB-INF" />
-        </webroots>
-      </configuration>
-    </facet>
-    <facet type="web" name="Web">
-      <configuration>
-        <descriptors>
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/WebContent/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
@@ -29,7 +19,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="classes2" level="project" />
-    <orderEntry type="library" name="lib4" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="classes" level="project" />
   </component>
 </module>

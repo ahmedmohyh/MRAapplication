@@ -29,7 +29,8 @@
               <label for="review" class="col-sm-2 col-form-label">Comment:</label>
               <textarea class="col-sm-6" id="review" rows="5" name="comment"></textarea>
             </div>
-            <button type="submit" value="submit" class="btn btn-primary mb-2 d-block float-end" href="rate_movie">Rate!</button>
+            <button type="submit" value="submit" id = "rateMovieButton"  name = "rateMovieButton" class="btn btn-primary mb-2 d-block float-end" href="rate_movie">Rate!</button>
+            <input type = "hidden" id = "username" name = "username" value = "1"}/>
           </form>
         </div>
       </div>
