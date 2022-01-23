@@ -1498,3 +1498,1003 @@ ALTER TABLE `Rating`
   ALTER TABLE `Movie`
   ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
 COMMIT 
+
+-------
+23/49/2022 21:49:37
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/49/2022 21:49:39
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/49/2022 21:49:41
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/49/2022 21:49:43
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/00/2022 22:00:42
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/04/2022 22:04:13
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/06/2022 22:06:37
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/15/2022 22:15:42
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/16/2022 22:16:23
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/16/2022 22:16:46
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/29/2022 22:29:43
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/29/2022 22:29:45
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/37/2022 22:37:34
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/42/2022 22:42:15
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/45/2022 22:45:56
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/51/2022 22:51:33
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/52/2022 22:52:04
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/52/2022 22:52:07
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/52/2022 22:52:09
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 
+
+-------
+23/52/2022 22:52:12
+-------
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO" 
+SET AUTOCOMMIT = 0 
+START TRANSACTION 
+SET time_zone = "+00:00" 
+CREATE TABLE `Movie` (
+  `id` int(11) NOT NULL,
+  `OriginalPublishingDate` timestamp NULL DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `director` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `ActorList` varchar(500) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Movie`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Movie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `UserData` (
+  `id` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL UNIQUE,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL	
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `UserData`
+  ADD PRIMARY KEY (`id`) 
+ALTER TABLE `UserData`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+  CREATE TABLE `Rating` (
+  `id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `FilmID` int(11) NOT NULL,
+  `userName` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 
+ALTER TABLE `Rating`
+ ADD PRIMARY KEY (`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`FilmID`) references Movie(`id`) 
+ALTER TABLE `Rating`
+  ADD foreign key (`userName`) references UserData(`userName`) 
+ALTER TABLE `Rating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT 
+ALTER TABLE `Rating`
+    ADD CONSTRAINT `Rating` UNIQUE(`userName`, `FilmID`) 
+  ALTER TABLE `Movie`
+  ADD CONSTRAINT `Movie` UNIQUE(`title`, `OriginalPublishingDate`) 
+COMMIT 

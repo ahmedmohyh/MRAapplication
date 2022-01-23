@@ -9,7 +9,13 @@ public class UserData {
 	private int age;
 	private String email;
 	private String username;
-	
+
+	public UserData(int age, String email, String username) {
+		this.age = age;
+		this.email = email;
+		this.username = username;
+	}
+
 	public UserData() {
 		
 	}
