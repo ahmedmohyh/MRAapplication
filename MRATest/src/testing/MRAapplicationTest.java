@@ -17,6 +17,9 @@ import dbadapter.Rating;
 import dbadapter.UserData;
 import junit.framework.TestCase;
 
+//this class contains system tests.
+//A stub is made in every method.
+
 @PrepareForTest(DBFacade.class)
 public class MRAapplicationTest extends TestCase {
 
@@ -48,13 +51,15 @@ public class MRAapplicationTest extends TestCase {
 	public MRAapplicationTest() {
 		super();
 	}
-	
+
+	//this method contains the default test
 	@Test
 	public void testByDefault() {
 		DBFacade stub = mock(DBFacade.class);
 		DBFacade.setInstance(stub);
 	}
-	
+
+	//this method contains the test for the method getUserMovies() from the class MRAapplication
 	@Test
 	public void testGetUserMovies() {
 		DBFacade stub = mock(DBFacade.class);
@@ -64,8 +69,8 @@ public class MRAapplicationTest extends TestCase {
 
 		verify(stub, times(1)).getUserMovies();
 	}
-	
-	
+
+	//this method contains the test for the method getUserMoviesForRating() from the class MRAapplication
 	@Test
 	public void testGetUserMoviesForRating() {
 		DBFacade stub = mock(DBFacade.class);
@@ -75,7 +80,8 @@ public class MRAapplicationTest extends TestCase {
 
 		verify(stub, times(1)).getUserMoviesForRating();
 	}
-	
+
+	//this method contains the test for the method insertUserData() from the class MRAapplication
 	@Test
 	public void testInsertUserData() {
 		DBFacade stub = mock(DBFacade.class);
@@ -86,6 +92,7 @@ public class MRAapplicationTest extends TestCase {
 		verify(stub, times(1)).insertUserData(userData);
 	}
 
+	//this method contains the test for the method insertFilm() from the class MRAapplication
 	@Test
 	public void testInsertFilm() {
 		DBFacade stub = mock(DBFacade.class);
@@ -95,7 +102,9 @@ public class MRAapplicationTest extends TestCase {
 
 		verify(stub, times(1)).insertFilm(movie);
 	}
-	
+
+
+	//this method contains the test for the method insertRating() from the class MRAapplication
 	@Test
 	public void testInsertRating() {
 		DBFacade stub = mock(DBFacade.class);

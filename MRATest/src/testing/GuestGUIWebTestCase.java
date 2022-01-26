@@ -23,7 +23,8 @@ public class GuestGUIWebTestCase {
 		tester.setBaseUrl("http://localhost:8080/MRA/");
 	}
 
-	
+
+	//testing the webpage that allows the webpage where the user enters the data for registering
 	@Test 
 	public void testInsertUserData() { 
 		// Start testing for registering, hence got to page of register 
@@ -51,7 +52,8 @@ public class GuestGUIWebTestCase {
 		tester.clickButton("registerButton");
 	}
 	
-	
+
+	// here we are testing if the webpage that inserts a film ot the database is working properly.
 	
 	@Test
 	public void testInsertFilm() { 
@@ -79,8 +81,10 @@ public class GuestGUIWebTestCase {
 		tester.clickButton("addMovieButton"); 
 	}
 	
-	 
-	
+
+
+
+	//here we are testing if the webpage that allows the user to insert a rating for a movie is functioning well =)
 	@Test
 	public void testInsertRating() {
 		// Start testing for rating a movie
@@ -107,7 +111,7 @@ public class GuestGUIWebTestCase {
 		tester.clickButton("rateMovieButton");
 	}
 	
-	
+	//here we are testing if the Overview of the movies is present on the webpage!
 	@Test
 		public void testGetUserMovies() {
 		// Start testing for rating a movie
