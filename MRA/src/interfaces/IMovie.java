@@ -11,9 +11,9 @@ import dbadapter.Rating;
  *
  */
 public interface IMovie {
-	public ArrayList<Movie> getUserMovies();
+	public ArrayList<Movie> get_MovieOverview();
 	public ArrayList<Movie> getUserMoviesForRating();
-	public boolean insertRating(Rating rate);
-	public boolean insertFilm(Movie film);
+	public boolean rateMovie(Rating rate);
+	public boolean saveFilmData(Movie film);
 	//TODO add your function that should be coming from the database
 }

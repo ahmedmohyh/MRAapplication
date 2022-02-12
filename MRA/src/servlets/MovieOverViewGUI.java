@@ -34,7 +34,7 @@ public class MovieOverViewGUI extends HttpServlet {
        else {
        System.out.println("hi i got here");
 		MRAapplication mrApp =  MRAapplication.getInstance();
-	       ArrayList<Movie> movieQuery = mrApp.getUserMovies();
+	       ArrayList<Movie> movieQuery = mrApp.forwardSeeMovieOverview();
 	       
 	        request.setAttribute("movies", movieQuery);
 	        request.setAttribute("pagetitle", "Welcome");

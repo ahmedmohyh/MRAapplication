@@ -51,7 +51,7 @@ public class Registration extends HttpServlet {
 			FeedbackServlet error = new FeedbackServlet(msg,"Age invalid",false);
 			error.doGet(request, response);
 		}else {
-			if(mrApp.insertUserData(newUD)) {
+			if(mrApp.forwardRegisterRequest(newUD)) {
 				mrApp.setLoggedUserName(newUD.get_username());
 				FeedbackServlet feedback = new FeedbackServlet("The user is registerd successfully","Success", true);
 				feedback.doGet(request, response);

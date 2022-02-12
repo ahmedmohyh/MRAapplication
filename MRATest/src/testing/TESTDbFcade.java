@@ -1,9 +1,7 @@
 package testing;
 
 
-import application.MRAapplication;
 import dbadapter.*;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.TestCase;
@@ -32,6 +30,12 @@ public class TESTDbFcade extends TestCase {
         super();
     }
 
+    /**
+     * This function will be excuted every time we run a test in this class
+     *
+     * @author Ahmed Mohamed
+     *
+     */
     @Before
     public void setUp() {
 
@@ -115,10 +119,16 @@ public class TESTDbFcade extends TestCase {
         }
     }
 
+    /**
+     * This unit test is to test the MovieOverview Page and its functionality
+     *
+     * @author Ahmed Mousa
+     *
+     */
     @Test
     public void testOverView()
     {
-        List<Movie> movieList = DBFacade.getInstance().getUserMovies();
+        List<Movie> movieList = DBFacade.getInstance().get_MovieOverview();
         assertEquals(1,movieList.size());
         assertEquals(testMovie.getOriginalPublishingDate(),movieList.get(0).getOriginalPublishingDate());
         assertEquals(testMovie.getTitle(),movieList.get(0).getTitle());
@@ -127,10 +137,16 @@ public class TESTDbFcade extends TestCase {
 
     }
 
+    /**
+     * This unit test is to test insert movie in the database and see that the database is actually changed.
+     *
+     * @author Ahmed Mousa
+     *
+     */
     @Test
     public void testInsertFilm(){
-        DBFacade.getInstance().insertFilm(notAddedMovie);
-        List<Movie> movieList = DBFacade.getInstance().getUserMovies();
+        DBFacade.getInstance().saveFilmData(notAddedMovie);
+        List<Movie> movieList = DBFacade.getInstance().get_MovieOverview();
         assertEquals(2,movieList.size());
         assertEquals(notAddedMovie.getOriginalPublishingDate(),movieList.get(1).getOriginalPublishingDate());
         assertEquals(notAddedMovie.getTitle(),movieList.get(1).getTitle());
@@ -139,10 +155,16 @@ public class TESTDbFcade extends TestCase {
 
     }
 
+    /**
+     * This unit test is to test insert UserData in the database and see that the database is actually changed.
+     *
+     * @author Ahmed Mousa
+     *
+     */
     @Test
     public  void testInserUserData(){
 
-         DBFacade.getInstance().insertUserData(notAddedUserData);
+         DBFacade.getInstance().saveUser(notAddedUserData);
         ArrayList<UserData> listUsers = new ArrayList<>();
         try (Connection connection = DriverManager
                 .getConnection(this.Url)) {
@@ -166,10 +188,15 @@ public class TESTDbFcade extends TestCase {
 
         }
 
-
+    /**
+     * This unit test is to test insert Rating in the database and see that the database is actually changed.
+     *
+     * @author Ahmed Mousa
+     *
+     */
     @Test
     public void testInsertRating(){
-         DBFacade.getInstance().insertRating(testRating);
+         DBFacade.getInstance().rateMovie(testRating);
 
         ArrayList<Rating> listRatings = new ArrayList<>();
         try (Connection connection = DriverManager

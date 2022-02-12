@@ -8,7 +8,6 @@ import application.MRAapplication;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 
 import dbadapter.DBFacade;
@@ -65,9 +64,9 @@ public class MRAapplicationTest extends TestCase {
 		DBFacade stub = mock(DBFacade.class);
 		DBFacade.setInstance(stub);
 
-		MRAapplication.getInstance().getUserMovies();
+		MRAapplication.getInstance().forwardSeeMovieOverview();
 
-		verify(stub, times(1)).getUserMovies();
+		verify(stub, times(1)).get_MovieOverview();
 	}
 
 	//this method contains the test for the method getUserMoviesForRating() from the class MRAapplication
@@ -87,9 +86,9 @@ public class MRAapplicationTest extends TestCase {
 		DBFacade stub = mock(DBFacade.class);
 		DBFacade.setInstance(stub);
 
-		MRAapplication.getInstance().insertUserData(userData);
+		MRAapplication.getInstance().forwardRegisterRequest(userData);
 
-		verify(stub, times(1)).insertUserData(userData);
+		verify(stub, times(1)).saveUser(userData);
 	}
 
 	//this method contains the test for the method insertFilm() from the class MRAapplication
@@ -98,9 +97,9 @@ public class MRAapplicationTest extends TestCase {
 		DBFacade stub = mock(DBFacade.class);
 		DBFacade.setInstance(stub);
 
-		MRAapplication.getInstance().insertFilm(movie);
+		MRAapplication.getInstance().AddNewFilm(movie);
 
-		verify(stub, times(1)).insertFilm(movie);
+		verify(stub, times(1)).saveFilmData(movie);
 	}
 
 
@@ -110,9 +109,9 @@ public class MRAapplicationTest extends TestCase {
 		DBFacade stub = mock(DBFacade.class);
 		DBFacade.setInstance(stub);
 
-		MRAapplication.getInstance().insertRating(rating);
+		MRAapplication.getInstance().forwardRateMovie(rating);
 
-		verify(stub, times(1)).insertRating(rating);
+		verify(stub, times(1)).rateMovie(rating);
 	}
 
 }

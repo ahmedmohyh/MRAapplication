@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import interfaces.IMovie;
-import interfaces.IUser;
+import interfaces.IUserData;
 //TODO:Implement your own methods that should interact directly with the database!
 
 /**
@@ -24,7 +24,7 @@ import interfaces.IUser;
  * @author Ahmed Mousa
  *
  */
-public class DBFacade implements IMovie,IUser {
+	public class DBFacade implements IMovie, IUserData {
 	private static DBFacade instance;
 
 	/**
@@ -56,12 +56,12 @@ public class DBFacade implements IMovie,IUser {
 
 	/**
 	 * This function return a list of all movies sorted by the avg rating.
-	 * @param None
+	 * @param
 	 * @return ArrayList of all Movies 
 	 * @autor Ahmed Mousa.
 	 */
 	@Override
-	public ArrayList<Movie> getUserMovies() {
+	public ArrayList<Movie> get_MovieOverview() {
 		// TODO Auto-generated method stub
 		
 		ArrayList<Movie> result = new ArrayList<Movie>();
@@ -101,7 +101,7 @@ public class DBFacade implements IMovie,IUser {
 	
 	/**
 	 * This function return a list of all movies so that they can be shown in a dropdown list
-	 * @param None
+	 * @param
 	 * @return ArrayList of all Movies 
 	 * @autor Kentnard
 	 */
@@ -138,8 +138,14 @@ public class DBFacade implements IMovie,IUser {
 		return result;
 	}
 
+	/**
+	 * This function instert a given rating in the DB.
+	 * @param rating object
+	 * @autor Ahmed Mohamed
+	 * @return boolean to check if the process succeeded or not
+	 */
 	@Override
-	public boolean insertRating(Rating rate) {
+	public boolean rateMovie(Rating rate) {
 		//String url = "jdbc:" + Configuration.getType() + "://" + Configuration.getServer() + ":" + Configuration.getPort() + "/" + Configuration.getDatabase() + "?user=" + Configuration.getUser();
 		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
 		+ "&useUnicode=true&characterEncoding=UTF-8"
@@ -166,7 +172,7 @@ public class DBFacade implements IMovie,IUser {
 	 * @autor Osama Elsafty
 	 */
 	@Override
-	public boolean insertFilm(Movie film) {
+	public boolean saveFilmData(Movie film) {
 		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
 		+ "&useUnicode=true&characterEncoding=UTF-8"
 		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";
@@ -217,8 +223,15 @@ public class DBFacade implements IMovie,IUser {
 		}
 		return true;
 	}
+
+	/**
+	 * This function instert a given UserData in the DB.
+	 * @param UserData object
+	 * @autor Kentnard
+	 * @return boolean to check if the process succeeded or not
+	 */
 	@Override
-	public boolean insertUserData(UserData ud) {
+	public boolean saveUser(UserData ud) {
 		String url = "jdbc:mysql://127.0.0.1:3306/mra?user=root&password=" + Configuration.getPassword() 
 		+ "&useUnicode=true&characterEncoding=UTF-8"
 		+ "&zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=GMT&useSSL=false";

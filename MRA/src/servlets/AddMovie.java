@@ -55,7 +55,7 @@ public class AddMovie extends HttpServlet {
 		newMovie.setOriginalPublishingDate(request.getParameter("OriginalPublishingDate"));
 		newMovie.setActors(request.getParameter("Actors"));
 		
-		if(mrApp.insertFilm(newMovie)) {
+		if(mrApp.AddNewFilm(newMovie)) {
 			FeedbackServlet feedback = new FeedbackServlet("The film is added successfully","Success", true);
 			feedback.doGet(request, response);
 		}

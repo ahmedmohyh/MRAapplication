@@ -72,7 +72,7 @@ public class RateMovie extends HttpServlet {
 			FeedbackServlet error = new FeedbackServlet(msg,title, false);
 			error.doGet(request, response);
 		}else {
-			if(mrApp.insertRating(newRate)) {
+			if(mrApp.forwardRateMovie(newRate)) {
 				String msg = "Rating successfully: Your rating has been added successfully.";
 				String title = "Rated Sucessfully!";
 				FeedbackServlet error = new FeedbackServlet(msg,title, true);

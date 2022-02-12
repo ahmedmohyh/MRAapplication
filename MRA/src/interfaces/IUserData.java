@@ -7,8 +7,8 @@ import dbadapter.UserData;
  * @author Ahmed Mosua
  *
  */
-public interface IUser {
+public interface IUserData {
 	
-	public boolean insertUserData(UserData ud);
+	public boolean saveUser(UserData ud);
 	//TODO add your function that should be coming from the database
 }

@@ -17,7 +17,7 @@ public class Timer {
 	//new update
 	public static void main(String[] args) {
 		MRAapplication vrApp = new MRAapplication();
-		ArrayList<Movie> test = vrApp.getUserMovies();
+		ArrayList<Movie> test = vrApp.forwardSeeMovieOverview();
 		
 		for (Movie m : test) {
 			System.out.print(m.toString());
